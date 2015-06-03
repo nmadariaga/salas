@@ -15,7 +15,7 @@ class FacultadesController extends Controller {
 		 */
 		public function index()
 		{
-			return view("facultades.index")->with('facultades', \App\Facultades::paginate(5)->setPath('facultad'));
+			return view("facultades.index")->with('facultades', \App\Facultad::paginate(5)->setPath('facultad'));
 		}
 
 		/**
@@ -36,7 +36,7 @@ class FacultadesController extends Controller {
 		 */
 		public function store()
 		{
-			$facultad = new \App\Facultades;
+			$facultad = new \App\Facultad;
 
 			$facultad->nombre = \Request::input('nombre');
 			$facultad->campus_id = \Request::input('campus_id');
@@ -55,7 +55,7 @@ class FacultadesController extends Controller {
 		 */
 		public function show($id)
 		{
-			$facultad = \App\Facultades::find($id);
+			$facultad = \App\Facultad::find($id);
 
 			return view('facultades.show')->with('facultad',$facultad);
 		}
