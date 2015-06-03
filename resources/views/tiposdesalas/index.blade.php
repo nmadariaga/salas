@@ -1,4 +1,4 @@
-extends('tiposdesala.plantillaAdmin')
+@extends('tiposdesala.plantillaAdmin')
 @section('contenido')
 <p>
   <ul class="nav nav-tabs">

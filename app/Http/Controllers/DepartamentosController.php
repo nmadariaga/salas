@@ -14,7 +14,7 @@ class DepartamentosController extends Controller {
 			 */
 			public function index()
 			{
-				return view("departamentos.index")->with('departamentos', \App\Departamentos::paginate(5)->setPath('departamento'));
+				return view("departamentos.index")->with('departamentos', \App\Departamento::paginate(5)->setPath('departamento'));
 			}
 
 			/**
@@ -34,7 +34,7 @@ class DepartamentosController extends Controller {
 			 */
 			public function store()
 			{
-				$departamento = new \App\Departamentos;
+				$departamento = new \App\Departamento;
 
 				$departamento->nombre = \Request::input('nombre');
 				$departamento->facultad_id = \Request::input('facultad_id');
@@ -53,7 +53,7 @@ class DepartamentosController extends Controller {
 			 */
 			public function show($id)
 			{
-				$departamento = \App\Departamentos::find($id);
+				$departamento = \App\Departamento::find($id);
 
 				return view('departamentos.show')->with('departamento',$departamento);
 			}
@@ -66,7 +66,7 @@ class DepartamentosController extends Controller {
 			 */
 			public function edit($id)
 			{
-				return view('departamentos.edit')->with('departamento', \App\Departamentos::find($id));
+				return view('departamentos.edit')->with('departamento', \App\Departamento::find($id));
 			}
 
 			/**
@@ -77,7 +77,7 @@ class DepartamentosController extends Controller {
 			 */
 			public function update($id)
 			{
-				$departamento = \App\Departamentos::find($id);
+				$departamento = \App\Departamento::find($id);
 
 				$departamento->nombre = \Request::input('nombre');
 				$departamento->facultad_id = \Request::input('facultad_id');
@@ -95,7 +95,7 @@ class DepartamentosController extends Controller {
 			 */
 			public function destroy($id)
 			{
-				$departamento = \App\Departamentos::find($id);
+				$departamento = \App\Departamento::find($id);
 
 				$departamento->delete();
 

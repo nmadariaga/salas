@@ -14,7 +14,7 @@ class CarrerasController extends Controller {
 					 */
 					public function index()
 					{
-						return view("carreras.index")->with('carreras', \App\Carreras::paginate(5)->setPath('carrera'));
+						return view("carreras.index")->with('carreras', \App\Carrera::paginate(5)->setPath('carrera'));
 					}
 
 					/**
@@ -34,7 +34,7 @@ class CarrerasController extends Controller {
 					 */
 					public function store()
 					{
-						$carrera = new \App\Carreras;
+						$carrera = new \App\Carrera;
 
 						$carrera->codigo = \Request::input('codigo');
 						$carrera->nombre = \Request::input('nombre');
@@ -54,7 +54,7 @@ class CarrerasController extends Controller {
 					 */
 					public function show($id)
 					{
-						$carrera = \App\Carreras::find($id);
+						$carrera = \App\Carrera::find($id);
 
 						return view('carreras.show')->with('carrera',$carrera);
 					}
@@ -67,7 +67,7 @@ class CarrerasController extends Controller {
 					 */
 					public function edit($id)
 					{
-						return view('carreras.edit')->with('carrera', \App\Carreras::find($id));
+						return view('carreras.edit')->with('carrera', \App\Carrera::find($id));
 					}
 
 					/**
@@ -78,7 +78,7 @@ class CarrerasController extends Controller {
 					 */
 					public function update($id)
 					{
-						$carrera = \App\Escuelas::find($id);
+						$carrera = \App\Carrera::find($id);
 
 						$carrera->codigo = \Request::input('codigo');
 						$carrera->nombre = \Request::input('nombre');
@@ -97,7 +97,7 @@ class CarrerasController extends Controller {
 					 */
 					public function destroy($id)
 					{
-						$carrera = \App\Carreras::find($id);
+						$carrera = \App\Carrera::find($id);
 
 						$carrera->delete();
 

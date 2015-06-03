@@ -14,7 +14,7 @@ class EscuelasController extends Controller {
 				 */
 				public function index()
 				{
-					return view("escuelas.index")->with('escuelas', \App\Escuelas::paginate(5)->setPath('escuela'));
+					return view("escuelas.index")->with('escuelas', \App\Escuela::paginate(5)->setPath('escuela'));
 				}
 
 				/**
@@ -34,7 +34,7 @@ class EscuelasController extends Controller {
 				 */
 				public function store()
 				{
-					$escuela = new \App\Escuelas;
+					$escuela = new \App\Escuela;
 
 					$escuela->nombre = \Request::input('nombre');
 					$escuela->departamento_id = \Request::input('departamento_id');
@@ -53,7 +53,7 @@ class EscuelasController extends Controller {
 				 */
 				public function show($id)
 				{
-					$escuela = \App\Escuelas::find($id);
+					$escuela = \App\Escuela::find($id);
 
 					return view('escuelas.show')->with('escuela',$escuela);
 				}
@@ -66,7 +66,7 @@ class EscuelasController extends Controller {
 				 */
 				public function edit($id)
 				{
-					return view('escuelas.edit')->with('escuela', \App\Escuelas::find($id));
+					return view('escuelas.edit')->with('escuela', \App\Escuela::find($id));
 				}
 
 				/**
@@ -77,7 +77,7 @@ class EscuelasController extends Controller {
 				 */
 				public function update($id)
 				{
-					$escuela = \App\Escuelas::find($id);
+					$escuela = \App\Escuela::find($id);
 
 					$escuela->nombre = \Request::input('nombre');
 					$escuela->departamento_id = \Request::input('departamento_id');
@@ -95,7 +95,7 @@ class EscuelasController extends Controller {
 				 */
 				public function destroy($id)
 				{
-					$escuela = \App\Escuelas::find($id);
+					$escuela = \App\Escuela::find($id);
 
 					$escuela->delete();
 
