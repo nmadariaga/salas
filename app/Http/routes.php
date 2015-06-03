@@ -40,6 +40,16 @@ Route::resource('salas','SalasController');
 
 Route::resource('tiposdesalas','TiposdesalasController');
 
+Route::resource('asignaturas','AsignaturasController');
+
+//Route::resource('asignaturascursadas','AsignaturasCursadasController');
+
+Route::resource('cursos','CursosController');
+
+Route::resource('periodos','PeriodosController');
+
+Route::resource('horarios','HorariosController');
+
 
 Route::get('/admin/menu','AdminController@menu');
 
