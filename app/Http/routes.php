@@ -30,7 +30,15 @@ Route::resource('escuelas','EscuelasController');
 
 Route::resource('carreras','CarrerasController');
 
+Route::resource('docentes','DocentesController');
 
+Route::resource('estudiantes','EstudiantesController');
+
+Route::resource('funcionarios','FuncionariosController');
+
+Route::resource('salas','SalasController');
+
+Route::resource('tiposdesalas','TiposdesalasController');
 
 
 Route::get('/admin/menu','AdminController@menu');
