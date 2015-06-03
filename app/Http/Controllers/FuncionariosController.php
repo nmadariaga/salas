@@ -14,7 +14,7 @@ class FuncionariosController extends Controller {
 	 */
 	public function index()
 	{
-		return view("funcionarios.index")->with('funcionarios', \App\Funcionarios::paginate(5)->setPath('funcionario'));
+		return view("funcionarios.index")->with('funcionarios', \App\Funcionario::paginate(5)->setPath('funcionario'));
 	}
 
 	/**
@@ -54,7 +54,7 @@ class FuncionariosController extends Controller {
 	 */
 	public function show($id)
 	{
-		$funcionarios = \App\Funcionarios::find($id);
+		$funcionarios = \App\Funcionario::find($id);
 
 		return view('funcionarios.show')->with('funcionario',$funcionarios);
 	}
@@ -67,7 +67,7 @@ class FuncionariosController extends Controller {
 	 */
 	public function edit($id)
 	{
-		return view('funcionarios.edit')->with('funcionario', \App\Funcionarios::find($id));
+		return view('funcionarios.edit')->with('funcionario', \App\Funcionario::find($id));
 	}
 
 	/**
@@ -78,7 +78,7 @@ class FuncionariosController extends Controller {
 	 */
 	public function update($id)
 	{
-		$funcionarios = \App\Funcionarios::find($id);
+		$funcionarios = \App\Funcionario::find($id);
 
 		$funcionarios->departamento_id = \Request::input('departamento_id');
 		$funcionarios->rut = \Request::input('rut');
@@ -97,7 +97,7 @@ class FuncionariosController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		$funcionarios = \App\Funcionarios::find($id);
+		$funcionarios = \App\Funcionario::find($id);
 
 		$funcionarios->delete();
 

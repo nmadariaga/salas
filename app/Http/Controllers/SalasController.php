@@ -14,7 +14,7 @@ class SalasController extends Controller {
 	 */
 	public function index()
 	{
-		return view("salas.index")->with('salas', \App\Salas::paginate(5)->setPath('sala'));
+		return view("salas.index")->with('salas', \App\Sala::paginate(5)->setPath('sala'));
 	}
 
 	/**
@@ -54,7 +54,7 @@ class SalasController extends Controller {
 	 */
 	public function show($id)
 	{
-		$salas = \App\Salas::find($id);
+		$salas = \App\Sala::find($id);
 
 		return view('salas.show')->with('sala',$salas);
 	}
@@ -67,7 +67,7 @@ class SalasController extends Controller {
 	 */
 	public function edit($id)
 	{
-		return view('salas.edit')->with('sala', \App\Salas::find($id));
+		return view('salas.edit')->with('sala', \App\Sala::find($id));
 	}
 
 	/**
@@ -78,7 +78,7 @@ class SalasController extends Controller {
 	 */
 	public function update($id)
 	{
-		$salas = \App\Salas::find($id);
+		$salas = \App\Sala::find($id);
 
 		$salas->campus_id = \Request::input('campus_id');
 		$salas->tipo_sala_id = \Request::input('tipo_sala_id');
@@ -97,7 +97,7 @@ class SalasController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		$salas = \App\Salas::find($id);
+		$salas = \App\Sala::find($id);
 
 		$salas->delete();
 

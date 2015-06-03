@@ -14,7 +14,7 @@ class EstudiantesController extends Controller {
 	 */
 	public function index()
 	{
-		return view("estudiantes.index")->with('estudiantes', \App\Estudiantes::paginate(5)->setPath('estudiante'));
+		return view("estudiantes.index")->with('estudiantes', \App\Estudiante::paginate(5)->setPath('estudiante'));
 	}
 
 	/**
@@ -55,7 +55,7 @@ class EstudiantesController extends Controller {
 	 */
 	public function show($id)
 	{
-		$estudiante = \App\Estudiantes::find($id);
+		$estudiante = \App\Estudiante::find($id);
 
 		return view('estudiantes.show')->with('carrera',$estudiante);
 	}
@@ -68,7 +68,7 @@ class EstudiantesController extends Controller {
 	 */
 	public function edit($id)
 	{
-		return view('estudiantes.edit')->with('carrera', \App\Estudiantes::find($id));
+		return view('estudiantes.edit')->with('carrera', \App\Estudiante::find($id));
 	}
 
 	/**
@@ -79,7 +79,7 @@ class EstudiantesController extends Controller {
 	 */
 	public function update($id)
 	{
-		$estudiante = \App\Estudiantes::find($id);
+		$estudiante = \App\Estudiante::find($id);
 
 		$estudiante->carrera_id = \Request::input('carrera_id');
 		$estudiante->rut = \Request::input('rut');
@@ -99,7 +99,7 @@ class EstudiantesController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		$estudiante = \App\Estudiantes::find($id);
+		$estudiante = \App\Estudiante::find($id);
 
 		$estudiante->delete();
 

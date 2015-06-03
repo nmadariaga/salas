@@ -14,7 +14,7 @@ class DocentesController extends Controller {
 	 */
 	public function index()
 	{
-		return view("docentes.index")->with('docentes', \App\Docentes::paginate(5)->setPath('docente'));
+		return view("docentes.index")->with('docentes', \App\Docente::paginate(5)->setPath('docente'));
 	}
 
 	/**
@@ -54,7 +54,7 @@ class DocentesController extends Controller {
 	 */
 	public function show($id)
 	{
-		$docentes = \App\Docentes::find($id);
+		$docentes = \App\Docente::find($id);
 
 		return view('docentes.show')->with('docente',$docentes);
 	}
@@ -67,7 +67,7 @@ class DocentesController extends Controller {
 	 */
 	public function edit($id)
 	{
-		return view('docentes.edit')->with('docente', \App\Docentes::find($id));
+		return view('docentes.edit')->with('docente', \App\Docente::find($id));
 	}
 
 	/**
@@ -78,7 +78,7 @@ class DocentesController extends Controller {
 	 */
 	public function update($id)
 	{
-		$docentes = \App\Docentes::find($id);
+		$docentes = \App\Docente::find($id);
 
 		$docentes->departamento_id = \Request::input('departamento_id');
 		$docentes->rut = \Request::input('rut');
@@ -97,7 +97,7 @@ class DocentesController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		$docentes = \App\Docentes::find($id);
+		$docentes = \App\Docente::find($id);
 
 		$docentes->delete();
 

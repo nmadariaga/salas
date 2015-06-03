@@ -2,9 +2,9 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Docentes extends Model {
+class Funcionario extends Model {
 
-	protected $table = 'docentes';
+	protected $table = 'funcionarios';
 	protected $fillable = ['departamento_id','rut','nombres','apellidos'];
 	protected $guarded = ['id'];
 
