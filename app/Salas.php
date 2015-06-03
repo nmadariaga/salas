@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Sala extends Model {
+class Salas extends Model {
 
 	protected $table = 'salas';
 	protected $fillable = ['campus_id','tipo_sala_id','nombre','descripcion'];
