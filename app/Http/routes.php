@@ -30,6 +30,9 @@ Route::resource('escuelas','EscuelasController');
 
 Route::resource('carreras','CarrerasController');
 
+
+
+
 Route::get('/admin/menu','AdminController@menu');
 
 Route::get('/admin/campus','AdminController@campus');

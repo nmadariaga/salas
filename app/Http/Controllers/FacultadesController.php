@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Campus;
 
 class FacultadesController extends Controller {
 
@@ -24,7 +25,8 @@ class FacultadesController extends Controller {
 		 */
 		public function create()
 		{
-			return view('facultades.create');
+			$campus = Campus::lists('nombre','id');
+			return view('facultades.create')->with('campus',$campus);
 		}
 
 		/**
