@@ -44,7 +44,7 @@ class HorariosController extends Controller {
 
 				$horario->save();
 
-				return redirect('horarios/create')->with('message', 'horario Agregado');
+				return redirect()->route('horarios.index')->with('message', 'horario Agregado');
 			}
 
 			/**

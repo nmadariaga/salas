@@ -44,7 +44,7 @@ class CursosController extends Controller {
 
 			$curso->save();
 
-			return redirect('cursos/create')->with('message', 'curso agregado');
+			return redirect()->route('cursos.index')->with('message', 'curso agregado');
 		}
 
 		/**

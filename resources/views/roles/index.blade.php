@@ -1,13 +1,13 @@
-@extends('cursos.plantillaAdmin')
+@extends('roles.plantillaAdmin')
 @section('contenido')
 <p>
   <ul class="nav nav-tabs">
     <li class=""><a aria-expanded="true" href="/admin/menu" data-toggle="tab">Principal</a></li>
     <li class=""><a aria-expanded="false" href="/asignaturas" data-toggle="tab">Asignaturas</a></li>
-    <li class="active"><a aria-expanded="false" href="/cursos" data-toggle="tab">Cursos</a></li>
+    <li class=""><a aria-expanded="false" href="/cursos" data-toggle="tab">Cursos</a></li>
     <li class=""><a aria-expanded="false" href="/horarios" data-toggle="tab">Horarios</a></li>
     <li class=""><a aria-expanded="false" href="/periodos" data-toggle="tab">Periodos</a></li>
-    <li class=""><a aria-expanded="false" href="/roles" data-toggle="tab">Roles</a></li>
+    <li class="active"><a aria-expanded="false" href="/roles" data-toggle="tab">Roles</a></li>
     <li class="dropdown">
       <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#">Opciones <span class="caret"></span></a>
       <ul class="dropdown-menu">
@@ -19,23 +19,23 @@
   </ul>
   <table>
     <td width=505>
-      <h2>Listado de cursos</h2>
+      <h2>Listado de roles</h2>
     </td>
     <td>
-      <a href="/cursos/create" class="btn btn-warning btn-sm">Agregar cursos</a>
+      <a href="/roles/create" class="btn btn-warning btn-sm">Agregar rol</a>
     </td>
   </table>
 </p>
 <table class="table table-striped table-hover ">
   <tbody>
-    @foreach($cursos as $curso)
+    @foreach($roles as $role)
     <tr>
-      <td width=450>{{ $curso->asignatura_id }}</td>
+      <td width=450>{{ $role->nombre }}</td>
       <td>
-        {!! Html::link(route('cursos.show', $curso->id), 'Detalles', array('class' => 'label label-info')) !!}
-        {!! Html::link(route('cursos.edit', $curso->id), 'Editar', array('class' => 'label label-success')) !!}
+        {!! Html::link(route('roles.show', $role->id), 'Detalles', array('class' => 'label label-info')) !!}
+        {!! Html::link(route('roles.edit', $role->id), 'Editar', array('class' => 'label label-success')) !!}
         <td>
-          {!! Form::open(array('route' => array('cursos.destroy', $curso->id), 'method' => 'DELETE')) !!}
+          {!! Form::open(array('route' => array('roles.destroy', $role->id), 'method' => 'DELETE')) !!}
             <button class="label label-danger">Eliminar</button>
           {!! Form::close() !!}
         </td>

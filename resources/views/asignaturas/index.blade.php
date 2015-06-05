@@ -7,7 +7,7 @@
     <li class=""><a aria-expanded="false" href="/cursos" data-toggle="tab">Cursos</a></li>
     <li class=""><a aria-expanded="false" href="/horarios" data-toggle="tab">Horarios</a></li>
     <li class=""><a aria-expanded="false" href="/periodos" data-toggle="tab">Periodos</a></li>
-    <li class=""><a aria-expanded="false" href="/asignaturascursadas" data-toggle="tab">Asignaturas Cursadas</a></li>
+    <li class=""><a aria-expanded="false" href="/roles" data-toggle="tab">Roles</a></li>
     <li class="dropdown">
       <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#">Opciones <span class="caret"></span></a>
       <ul class="dropdown-menu">

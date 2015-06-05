@@ -50,6 +50,8 @@ Route::resource('periodos','PeriodosController');
 
 Route::resource('horarios','HorariosController');
 
+Route::resource('roles','RolesController');
+
 
 Route::get('/admin/menu','AdminController@menu');
 
