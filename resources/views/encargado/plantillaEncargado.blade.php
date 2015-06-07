@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Administrador|Menu</title>
-  <link href="{{ asset('/css/flatly.css') }}" rel="stylesheet">
+  <title>Encargado|Menu</title>
+  <link href="{{ asset('/css/spacelab.css') }}" rel="stylesheet">
   <style>
   body {
     width: 700px;
@@ -15,7 +15,7 @@
 </style>
 </head>
 <body>
-  <h1>MENU ADMINISTRADOR</h1>
+  <h1>MENU ENCARGADO</h1>
   @yield('contenido')
 </body>
 </html>

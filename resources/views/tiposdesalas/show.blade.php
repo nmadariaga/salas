@@ -1,13 +1,13 @@
-@extends('tiposdesalas.plantillaAdmin')
+@extends('encargado.plantillaEncargado')
 @section('contenido')
-<p>
-	<ul class="nav nav-tabs">
-    <li class=""><a aria-expanded="true" href="/admin/menu" data-toggle="tab">Principal</a></li>
-    <li class=""><a aria-expanded="false" href="/docentes" data-toggle="tab">Docentes</a></li>
-    <li class=""><a aria-expanded="false" href="/estudiantes" data-toggle="tab">Estudiantes</a></li>
-    <li class=""><a aria-expanded="false" href="/funcionarios" data-toggle="tab">Funcionarios</a></li>
-    <li class=""><a aria-expanded="false" href="/salas" data-toggle="tab">Salas</a></li>
-    <li class="active"><a aria-expanded="false" href="/tiposdesalas" data-toggle="tab">Tipos de Salas</a></li>
+<ul class="nav nav-tabs">
+  <li class=""><a aria-expanded="true" href="/encargado/menu" data-toggle="tab">Principal</a></li>
+  <li class=""><a aria-expanded="false" href="/asignaturas" data-toggle="tab">Asignaturas</a></li>
+  <li class=""><a aria-expanded="false" href="/cursos" data-toggle="tab">Cursos</a></li>
+  <li class=""><a aria-expanded="false" href="/horarios" data-toggle="tab">Horario</a></li>
+  <li class=""><a aria-expanded="false" href="/salas" data-toggle="tab">Salas</a></li>
+  <li class="active"><a aria-expanded="false" href="/tiposdesalas" data-toggle="tab">Tipos de Salas</a></li>
+  <li class=""><a aria-expanded="false" href="/periodos" data-toggle="tab">Periodos</a></li>
     <li class="dropdown">
       <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#">Opciones <span class="caret"></span></a>
       <ul class="dropdown-menu">
@@ -19,7 +19,7 @@
   </ul>
 	<table>
 		<td width=505><h2>Registro de Tipos de Salas</h2></td>
-		<td><a href="/salas" class="btn btn-default btn-sm">Volver</a>
+		<td><a href="/tiposdesalas" class="btn btn-default btn-sm">Volver</a>
 		{!! Html::link(route('tiposdesalas.edit', $tiposdesala->id), 'Editar', array('class' => 'btn btn-warning btn-sm')) !!}</td>
 	</table>
 </p>

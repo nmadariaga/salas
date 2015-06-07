@@ -1,13 +1,13 @@
-@extends('cursos.plantillaAdmin')
+@extends('encargado.plantillaEncargado')
 @section('contenido')
-<p>
-  <ul class="nav nav-tabs">
-    <li class=""><a aria-expanded="true" href="/admin/menu" data-toggle="tab">Principal</a></li>
-    <li class=""><a aria-expanded="false" href="/asignaturas" data-toggle="tab">Asignaturas</a></li>
-    <li class="active"><a aria-expanded="false" href="/cursos" data-toggle="tab">Cursos</a></li>
-    <li class=""><a aria-expanded="false" href="/horarios" data-toggle="tab">Horarios</a></li>
-    <li class=""><a aria-expanded="false" href="/periodos" data-toggle="tab">Periodos</a></li>
-    <li class=""><a aria-expanded="false" href="/roles" data-toggle="tab">Roles</a></li>
+<ul class="nav nav-tabs">
+  <li class=""><a aria-expanded="true" href="/encargado/menu" data-toggle="tab">Principal</a></li>
+  <li class=""><a aria-expanded="false" href="/asignaturas" data-toggle="tab">Asignaturas</a></li>
+  <li class="active"><a aria-expanded="false" href="/cursos" data-toggle="tab">Cursos</a></li>
+  <li class=""><a aria-expanded="false" href="/horarios" data-toggle="tab">Horario</a></li>
+  <li class=""><a aria-expanded="false" href="/salas" data-toggle="tab">Salas</a></li>
+  <li class=""><a aria-expanded="false" href="/tiposdesalas" data-toggle="tab">Tipos de Salas</a></li>
+  <li class=""><a aria-expanded="false" href="/periodos" data-toggle="tab">Periodos</a></li>
     <li class="dropdown">
       <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#">Opciones <span class="caret"></span></a>
       <ul class="dropdown-menu">
@@ -39,10 +39,10 @@
 				<div class="form-group">
 					{!! Form::text('seccion', null,['class'=>'form-control', 'placeholder'=>'Seccion'])!!}
 				</div
-				
+
 				><div class="form-group">
 					{!! Form::text('docente_id', null,['class'=>'form-control', 'placeholder'=>'Docente asignado al curso'])!!}
-				</div>				
+				</div>
 				<div class="form-group">
 					{!! Form::submit('Send', ["class" => "btn btn-success btn-block"]) !!}
 				</div>

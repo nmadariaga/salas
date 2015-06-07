@@ -14,7 +14,7 @@ class TiposdesalasController extends Controller {
 	 */
 	public function index()
 	{
-		return view("tiposdesalas.index")->with('tiposdesalas', \App\Tiposdesala::paginate(5)->setPath('tiposdesala'));
+		return view("tiposdesalas.index")->with('tiposdesalas', \App\Tipodesala::paginate(5)->setPath('tiposdesala'));
 	}
 
 	/**

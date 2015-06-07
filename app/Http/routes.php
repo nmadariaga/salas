@@ -53,6 +53,5 @@ Route::resource('horarios','HorariosController');
 Route::resource('roles','RolesController');
 
 
-Route::get('/admin/menu','AdminController@menu');
-
-Route::get('/admin/campus','AdminController@campus');
+Route::get('/admin/menu','MenuController@menuAdministrador');
+Route::get('/encargado/menu','MenuController@menuEncargado');

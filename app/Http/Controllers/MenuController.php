@@ -5,26 +5,21 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class AdminController extends Controller {
+class MenuController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function menu()
+	public function menuAdministrador()
 	{
 		return view('administrador.menu');
 	}
 
-	public function campus()
+	public function menuEncargado()
 	{
-		return view('administrador.campus');
-	}
-
-	public function usuarios()
-	{
-		return view('administrador.usuarios');
+		return view('encargado.menu');
 	}
 
 	/**
