@@ -34,7 +34,7 @@
               <td>{{$departamento->nombre}}</td>
             <tr>
               <td width=250><h5><b>Pertenece a la facultad:</b></h5></td>
-              <td>{{$departamento->facultad_id }}</td>
+              <td>{{$facultad->nombre }}</td>
             </tr>
             <tr>
               <td width=100><h5><b>Descripcion:</b></h5></td>

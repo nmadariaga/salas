@@ -56,7 +56,7 @@ class CarrerasController extends Controller {
 					public function show($id)
 					{
 						$carrera = \App\Carrera::find($id);
-						$escuela= Escuela::lists('nombre','id');
+						$escuela= Escuela::find($carrera->escuela_id);
 						return view('carreras.show')->with('carrera',$carrera)->with('escuela',$escuela);
 					}
 

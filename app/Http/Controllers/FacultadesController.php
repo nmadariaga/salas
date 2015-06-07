@@ -56,7 +56,7 @@ class FacultadesController extends Controller {
 		public function show($id)
 		{
 			$facultad = \App\Facultad::find($id);
-			$campus = Campus::lists('nombre','id');
+			$campus = Campus::find($facultad->campus_id);
 			return view('facultades.show')->with('facultad',$facultad)->with('campus',$campus);
 		}
 

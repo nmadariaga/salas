@@ -55,9 +55,13 @@ class DepartamentosController extends Controller {
 			public function show($id)
 			{
 				$departamento = \App\Departamento::find($id);
-				$facultad = Facultad::lists('nombre','id');
+				$facultad = Facultad::find($departamento->facultad_id);
 				return view('departamentos.show')->with('departamento',$departamento)->with('facultad',$facultad);
 			}
+
+
+
+
 
 			/**
 			 * Show the form for editing the specified resource.

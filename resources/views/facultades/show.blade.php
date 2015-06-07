@@ -34,7 +34,7 @@
               <td>{{$facultad->nombre}}</td>
             <tr>
               <td width=200><h5><b>Pertenece al campus:</b></h5></td>
-              <td>{{$facultad->campus_id }}</td>
+              <td>{{$campus->nombre }}</td>
             </tr>
             <tr>
               <td width=100><h5><b>Descripcion:</b></h5></td>

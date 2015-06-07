@@ -55,7 +55,7 @@ class EscuelasController extends Controller {
 				public function show($id)
 				{
 					$escuela = \App\Escuela::find($id);
-					$departamento = Departamento::lists('nombre','id');
+					$departamento = Departamento::find($escuela->departamento_id);
 					return view('escuelas.show')->with('escuela',$escuela)->with('departamento',$departamento);
 				}
 

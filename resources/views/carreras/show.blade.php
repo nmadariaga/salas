@@ -34,7 +34,7 @@
               <td>{{$carrera->nombre}}</td>
             <tr>
               <td width=250><h5><b>Pertenece a la escuela:</b></h5></td>
-              <td>{{$carrera->escuela_id }}</td>
+              <td>{{$escuela->nombre }}</td>
             </tr>
             <tr>
               <td width=100><h5><b>Descripcion:</b></h5></td>
