@@ -19,7 +19,7 @@
 	</ul>
 	<table>
 	   <td width=505><h2>Registro de Escuelas</h2></td>
-	    <td><a href="/departamentos" class="btn btn-default btn-sm">Volver</a>
+	    <td><a href="/escuelas" class="btn btn-default btn-sm">Volver</a>
           {!! Html::link(route('escuelas.edit', $escuela->id), 'Editar', array('class' => 'btn btn-warning btn-sm')) !!}</td>
   </table>
 </p>

@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Escuela;
 use Illuminate\Http\Request;
 
 class CarrerasController extends Controller {
@@ -24,7 +24,8 @@ class CarrerasController extends Controller {
 					 */
 					public function create()
 					{
-						return view('carreras.create');
+						$escuela = Escuela::lists('nombre','id');
+						return view('carreras.create')->with('escuela',$escuela);
 					}
 
 					/**
@@ -55,8 +56,8 @@ class CarrerasController extends Controller {
 					public function show($id)
 					{
 						$carrera = \App\Carrera::find($id);
-
-						return view('carreras.show')->with('carrera',$carrera);
+						$escuela= Escuela::lists('nombre','id');
+						return view('carreras.show')->with('carrera',$carrera)->with('escuela',$escuela);
 					}
 
 					/**
@@ -67,7 +68,8 @@ class CarrerasController extends Controller {
 					 */
 					public function edit($id)
 					{
-						return view('carreras.edit')->with('carrera', \App\Carrera::find($id));
+						$escuela = Escuela::lists('nombre','id');
+						return view('carreras.edit')->with('carrera', \App\Carrera::find($id))->with('escuela',$escuela);
 					}
 
 					/**

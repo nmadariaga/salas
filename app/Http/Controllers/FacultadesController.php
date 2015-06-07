@@ -56,8 +56,8 @@ class FacultadesController extends Controller {
 		public function show($id)
 		{
 			$facultad = \App\Facultad::find($id);
-
-			return view('facultades.show')->with('facultad',$facultad);
+			$campus = Campus::lists('nombre','id');
+			return view('facultades.show')->with('facultad',$facultad)->with('campus',$campus);
 		}
 
 		/**
@@ -68,7 +68,8 @@ class FacultadesController extends Controller {
 		 */
 		public function edit($id)
 		{
-			return view('facultades.edit')->with('facultad', \App\Facultades::find($id));
+			$campus = Campus::lists('nombre','id');
+			return view('facultades.edit')->with('facultad', \App\Facultad::find($id))->with('campus',$campus);
 		}
 
 		/**
@@ -79,7 +80,7 @@ class FacultadesController extends Controller {
 		 */
 		public function update($id)
 		{
-			$facultad = \App\Facultades::find($id);
+			$facultad = \App\Facultad::find($id);
 
 			$facultad->nombre = \Request::input('nombre');
 			$facultad->campus_id = \Request::input('campus_id');
@@ -97,7 +98,7 @@ class FacultadesController extends Controller {
 		 */
 		public function destroy($id)
 		{
-			$facultad = \App\Facultades::find($id);
+			$facultad = \App\Facultad::find($id);
 
 			$facultad->delete();
 

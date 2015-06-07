@@ -42,7 +42,7 @@
           </tr>
           @else
           <p>
-            No existe información de este Campus.
+            No existe información de esta Facultad.
           </p>
           @endif
       </tbody>

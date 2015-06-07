@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Departamento;
 use Illuminate\Http\Request;
 
 class EscuelasController extends Controller {
@@ -24,7 +24,8 @@ class EscuelasController extends Controller {
 				 */
 				public function create()
 				{
-					return view('escuelas.create');
+					$departamento = Departamento::lists('nombre','id');
+					return view('escuelas.create')->with('departamento',$departamento);
 				}
 
 				/**
@@ -54,8 +55,8 @@ class EscuelasController extends Controller {
 				public function show($id)
 				{
 					$escuela = \App\Escuela::find($id);
-
-					return view('escuelas.show')->with('escuela',$escuela);
+					$departamento = Departamento::lists('nombre','id');
+					return view('escuelas.show')->with('escuela',$escuela)->with('departamento',$departamento);
 				}
 
 				/**
@@ -66,7 +67,8 @@ class EscuelasController extends Controller {
 				 */
 				public function edit($id)
 				{
-					return view('escuelas.edit')->with('escuela', \App\Escuela::find($id));
+					$departamento = Departamento::lists('nombre','id');
+					return view('escuelas.edit')->with('escuela', \App\Escuela::find($id))->with('departamento',$departamento);
 				}
 
 				/**

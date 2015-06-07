@@ -31,7 +31,7 @@
 				{!! Form::text('nombre', null, ['class' => 'form-control', 'placeholder'=>'Nombre de la Escuela']) !!}
 			</div>
 			<div class="form-group">
-				{!! Form::text('facultad_id', null,['class'=>'form-control', 'placeholder'=>'Departamento'])!!}
+			{!! Form::select('departamento_id', $departamento) !!}
 			</div>
 			<div class="form-group">
 				{!! Form::text('descripcion', null,['class'=>'form-control', 'placeholder'=>'Descripcion'])!!}
