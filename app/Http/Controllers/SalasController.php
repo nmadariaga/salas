@@ -2,8 +2,9 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Tipodesala;
 use Illuminate\Http\Request;
+use App\Campus;
 
 class SalasController extends Controller {
 
@@ -24,7 +25,9 @@ class SalasController extends Controller {
 	 */
 	public function create()
 	{
-		return view('salas.create');
+		$campus = Campus::lists('nombre','id');
+		$tiposdesalas = Tipodesala::lists('nombre','id');
+		return view('salas.create')->with('tiposdesala',$tiposdesalas)->with('campus',$campus);
 	}
 
 	/**
@@ -32,7 +35,7 @@ class SalasController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(ValidarFormulario $postForm)
+	public function store()
 	{
 		$salas = new \App\Salas;
 
@@ -55,8 +58,9 @@ class SalasController extends Controller {
 	public function show($id)
 	{
 		$salas = \App\Sala::find($id);
-
-		return view('salas.show')->with('sala',$salas);
+		$campus = Campus::find($salas->campus_id);
+		$tiposdesalas = Tipodesala::find($salas->tipo_sala_id);
+		return view('salas.show')->with('sala',$salas)->with('tiposdesala',$salas)->with('campus',$campus);
 	}
 
 	/**
@@ -67,7 +71,9 @@ class SalasController extends Controller {
 	 */
 	public function edit($id)
 	{
-		return view('salas.edit')->with('sala', \App\Sala::find($id));
+		$campus = Campus::lists('nombre','id');
+		$tiposdesalas = Tipodesala::lists('nombre','id');
+		return view('salas.edit')->with('sala', \App\Sala::find($id))->with('tiposdesala',$tiposdesalas)->with('campus',$campus);
 	}
 
 	/**

@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Departamento;
 use Illuminate\Http\Request;
 
 class FuncionariosController extends Controller {
@@ -24,7 +24,8 @@ class FuncionariosController extends Controller {
 	 */
 	public function create()
 	{
-		return view('funcionarios.create');
+		$departamento = Departamento::lists('nombre','id');
+		return view('funcionarios.create')->with('departamento',$departamento);
 	}
 
 	/**
@@ -32,9 +33,9 @@ class FuncionariosController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(ValidarFormulario $postForm)
+	public function store()
 	{
-		$funcionarios = new \App\Funcionarios;
+		$funcionarios = new \App\Funcionario;
 
 		$funcionarios->departamento_id = \Request::input('departamento_id');
 		$funcionarios->rut = \Request::input('rut');
@@ -55,8 +56,8 @@ class FuncionariosController extends Controller {
 	public function show($id)
 	{
 		$funcionarios = \App\Funcionario::find($id);
-
-		return view('funcionarios.show')->with('funcionario',$funcionarios);
+		$departamento = Departamento::find($funcionarios->departamento_id);
+		return view('funcionarios.show')->with('funcionario',$funcionarios)->with('departamento',$departamento);;
 	}
 
 	/**
@@ -67,7 +68,8 @@ class FuncionariosController extends Controller {
 	 */
 	public function edit($id)
 	{
-		return view('funcionarios.edit')->with('funcionario', \App\Funcionario::find($id));
+		$departamento = Departamento::lists('nombre','id');
+		return view('funcionarios.edit')->with('funcionario', \App\Funcionario::find($id))->with('departamento',$departamento);
 	}
 
 	/**

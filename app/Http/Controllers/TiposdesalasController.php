@@ -14,7 +14,7 @@ class TiposdesalasController extends Controller {
 	 */
 	public function index()
 	{
-		return view("tiposdesalas.index")->with('tiposdesalas', \App\Tipodesala::paginate(5)->setPath('tiposdesala'));
+		return view('tiposdesalas.index')->with('tiposdesalas', \App\Tipodesala::paginate(5)->setPath('tiposdesala'));
 	}
 
 	/**
@@ -32,9 +32,9 @@ class TiposdesalasController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(ValidarFormulario $postForm)
+	public function store()
 	{
-		$tiposdesalas = new \App\Tiposdesalas;
+		$tiposdesalas = new \App\Tipodesala;
 
 		$tiposdesalas->nombre = \Request::input('nombre');
 		$tiposdesalas->descripcion = \Request::input('descripcion');
@@ -52,7 +52,7 @@ class TiposdesalasController extends Controller {
 	 */
 	public function show($id)
 	{
-		$tiposdesalas = \App\Tiposdesala::find($id);
+		$tiposdesalas = \App\Tipodesala::find($id);
 
 		return view('tiposdesalas.show')->with('tiposdesala',$tiposdesalas);
 	}
@@ -65,7 +65,7 @@ class TiposdesalasController extends Controller {
 	 */
 	public function edit($id)
 	{
-		return view('tiposdesalas.edit')->with('tiposdesala', \App\Tiposdesala::find($id));
+		return view('tiposdesalas.edit')->with('tiposdesala', \App\Tipodesala::find($id));
 	}
 
 	/**
@@ -76,7 +76,7 @@ class TiposdesalasController extends Controller {
 	 */
 	public function update($id)
 	{
-		$tiposdesalas = \App\Tiposdesala::find($id);
+		$tiposdesalas = \App\Tipodesala::find($id);
 
 		$tiposdesalas->nombre = \Request::input('nombre');
 		$tiposdesalas->descripcion = \Request::input('descripcion');
@@ -93,7 +93,7 @@ class TiposdesalasController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		$tiposdesalas = \App\Tiposdesala::find($id);
+		$tiposdesalas = \App\Tipodesala::find($id);
 
 		$tiposdesalas->delete();
 

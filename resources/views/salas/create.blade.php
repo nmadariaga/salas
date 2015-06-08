@@ -28,10 +28,10 @@
   	<tbody>
 			{!! Form::open(['route' => 'salas.store']) !!}
 				<div class="form-group">
-					{!! Form::text('campus_id', null, ['class' => 'form-control', 'placeholder'=>'Campus']) !!}
+					{!! Form::select('campus_id', $campus) !!}
 				</div>
 				<div class="form-group">
-					{!! Form::text('tipo_sala_id', null,['class'=>'form-control', 'placeholder'=>'Tipo de Sala'])!!}
+					{!! Form::select('tipo_sala_id', $tiposdesala) !!}
 				</div>
 				<div class="form-group">
 					{!! Form::text('nombre', null,['class'=>'form-control', 'placeholder'=>'Nombre'])!!}

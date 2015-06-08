@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Departamento;
 use Illuminate\Http\Request;
 
 class DocentesController extends Controller {
@@ -24,7 +24,9 @@ class DocentesController extends Controller {
 	 */
 	public function create()
 	{
-		return view('docentes.create');
+
+		$departamento = Departamento::lists('nombre','id');
+		return view('docentes.create')->with('departamento',$departamento);
 	}
 
 	/**
@@ -32,7 +34,7 @@ class DocentesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(ValidarFormulario $postForm)
+	public function store()
 	{
 		$docentes = new \App\Docentes;
 
@@ -55,8 +57,8 @@ class DocentesController extends Controller {
 	public function show($id)
 	{
 		$docentes = \App\Docente::find($id);
-
-		return view('docentes.show')->with('docente',$docentes);
+		$departamento = Departamento::find($docentes->departamento_id);
+		return view('docentes.show')->with('docente',$docentes)->with('departamento',$departamento);
 	}
 
 	/**
@@ -67,7 +69,8 @@ class DocentesController extends Controller {
 	 */
 	public function edit($id)
 	{
-		return view('docentes.edit')->with('docente', \App\Docente::find($id));
+		$departamento = Departamento::lists('nombre','id');
+		return view('docentes.edit')->with('docente', \App\Docente::find($id))->with('departamento',$departamento);
 	}
 
 	/**

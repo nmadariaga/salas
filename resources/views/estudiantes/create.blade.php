@@ -30,7 +30,7 @@
   	<tbody>
 			{!! Form::open(['route' => 'estudiantes.store']) !!}
 				<div class="form-group">
-					{!! Form::text('carrera_id', null, ['class' => 'form-control', 'placeholder'=>'Carrera']) !!}
+					{!! Form::select('carrera_id', $carrera) !!}
 				</div>
 				<div class="form-group">
 					{!! Form::text('rut', null,['class'=>'form-control', 'placeholder'=>'RUT'])!!}

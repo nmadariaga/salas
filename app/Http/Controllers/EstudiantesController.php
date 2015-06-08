@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Carrera;
 use Illuminate\Http\Request;
 
 class EstudiantesController extends Controller {
@@ -24,7 +24,8 @@ class EstudiantesController extends Controller {
 	 */
 	public function create()
 	{
-		return view('estudiantes.create');
+		$carrera = Carrera::lists('nombre','id');
+		return view('estudiantes.create')->with('carrera',$carrera);
 	}
 
 	/**
@@ -34,7 +35,7 @@ class EstudiantesController extends Controller {
 	 */
 	public function store()
 	{
-		$estudiante = new \App\Estudiantes;
+		$estudiante = new \App\Estudiante;
 
 		$estudiante->carrera_id = \Request::input('carrera_id');
 		$estudiante->rut = \Request::input('rut');
@@ -56,8 +57,8 @@ class EstudiantesController extends Controller {
 	public function show($id)
 	{
 		$estudiante = \App\Estudiante::find($id);
-
-		return view('estudiantes.show')->with('carrera',$estudiante);
+		$carrera = Carrera::find($estudiante->carrera_id);
+		return view('estudiantes.show')->with('estudiante',$estudiante)->with('carrera',$carrera);
 	}
 
 	/**
@@ -68,7 +69,8 @@ class EstudiantesController extends Controller {
 	 */
 	public function edit($id)
 	{
-		return view('estudiantes.edit')->with('carrera', \App\Estudiante::find($id));
+		$carrera = Carrera::lists('nombre','id');
+		return view('estudiantes.edit')->with('estudiante', \App\Estudiante::find($id))->with('carrera',$carrera);
 	}
 
 	/**
