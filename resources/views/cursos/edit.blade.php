@@ -37,7 +37,7 @@
 				{!! Form::text('seccion', null,['class'=>'form-control', 'placeholder'=>'Seccion'])!!}
 			</div>
 			<div class="form-group">
-				{!! Form::text('asignatura_id', null,['class'=>'form-control', 'placeholder'=>'Asignatura'])!!}
+			{!! Form::select('asignatura_id', $asignaturas) !!}
 			</div>
 			<div class="form-group">
 				{!! Form::text('docente_id', null,['class'=>'form-control', 'placeholder'=>'Docente asignado al curso'])!!}

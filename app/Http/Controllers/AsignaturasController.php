@@ -24,7 +24,8 @@ class AsignaturasController extends Controller {
 	 */
 	public function create()
 	{
-		return view('asignaturas.create');
+		$departamento = \App\Departamento::lists('nombre','id');
+		return view('asignaturas.create')->with('departamento',$departamento);
 	}
 
 	/**
@@ -55,8 +56,8 @@ class AsignaturasController extends Controller {
 	public function show($id)
 	{
 		$asignaturas = \App\Asignatura::find($id);
-
-		return view('asignaturas.show')->with('asignatura',$asignaturas);
+        $departamento = \App\Departamento::find($asignatura->departamento_id);
+		return view('asignaturas.show')->with('asignatura',$asignaturas)->with('departamentos',$departamentos);
 	}
 
 	/**
@@ -67,7 +68,8 @@ class AsignaturasController extends Controller {
 	 */
 	public function edit($id)
 	{
-		return view('asignaturas.edit')->with('asignatura', \App\Asignatura::find($id));
+		$departamentos = \App\Departamento::lists('nombre','id');
+		return view('asignaturas.edit')->with('asignatura', \App\Asignatura::find($id))->with('departamentos',$departamentos);
 	}
 
 	/**

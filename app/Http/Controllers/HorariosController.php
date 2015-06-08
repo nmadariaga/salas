@@ -24,7 +24,8 @@ class HorariosController extends Controller {
 			 */
 			public function create()
 			{
-				return view('horarios.create');
+				$periodo = \App\Periodo::lists('bloque','id');
+		return view('horarios.create')->with('periodo',$periodo);
 			}
 
 			/**
@@ -56,8 +57,8 @@ class HorariosController extends Controller {
 			public function show($id)
 			{
 				$horario = \App\Horario::find($id);
-
-				return view('horarios.show')->with('horario',$horario);
+                $periodo = \App\Periodo::find($horario->periodo_id);
+				return view('horarios.show')->with('horario',$horario)->with('periodos',$periodos);
 			}
 
 			/**
@@ -68,7 +69,8 @@ class HorariosController extends Controller {
 			 */
 			public function edit($id)
 			{
-				return view('horarios.edit')->with('horario', \App\Horario::find($id));
+				$periodos = \App\Periodo::lists('bloque','id');
+				return view('horarios.edit')->with('horario', \App\Horario::find($id))->with('periodos',$periodos);
 			}
 
 			/**

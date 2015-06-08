@@ -24,7 +24,8 @@ class CursosController extends Controller {
 		 */
 		public function create()
 		{
-			return view('cursos.create');
+			$asignatura = \App\Asignatura::lists('nombre','id');
+		return view('cursos.create')->with('asignatura',$asignatura);
 		}
 
 		/**
@@ -33,8 +34,8 @@ class CursosController extends Controller {
 		 * @return Response
 		 */
 		public function store()
-		{
-			$curso = new \App\cursos;
+		{ 
+			$curso = new \App\Curso;
 
 			$curso->semestre = \Request::input('semestre');
 			$curso->seccion = \Request::input('seccion');
@@ -56,8 +57,8 @@ class CursosController extends Controller {
 		public function show($id)
 		{
 			$curso = \App\Curso::find($id);
-
-			return view('cursos.show')->with('curso',$curso);
+            $asignaturas = \App\Asignatura::find($curso->asignatura_id);
+			return view('cursos.show')->with('curso',$curso)->with('asignaturas',$asignaturas);
 		}
 
 		/**
@@ -68,7 +69,8 @@ class CursosController extends Controller {
 		 */
 		public function edit($id)
 		{
-			return view('cursos.edit')->with('curso', \App\Curso::find($id));
+			$asignaturas = \App\Asignatura::lists('nombre','id');
+			return view('cursos.edit')->with('curso', \App\Curso::find($id))->with('asignaturas',$asignaturas);
 		}
 
 		/**

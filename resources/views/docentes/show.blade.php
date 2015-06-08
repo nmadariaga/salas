@@ -25,7 +25,7 @@
 		{!! Html::link(route('docentes.edit', $docente->id), 'Editar', array('class' => 'btn btn-warning btn-sm')) !!}</td>
 	</table>
 </p>
-<h4>Información del Docente "{{$docente->nombre}}" </h4>
+<h4>Información del Docente "{{$docente->nombres}}" </h4>
   <table class="table table-striped table-hover ">
     <tbody>
           @if (!empty($docente))

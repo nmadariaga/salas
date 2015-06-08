@@ -36,7 +36,7 @@ class DocentesController extends Controller {
 	 */
 	public function store()
 	{
-		$docentes = new \App\Docentes;
+		$docentes = new \App\Docente;
 
 		$docentes->departamento_id = \Request::input('departamento_id');
 		$docentes->rut = \Request::input('rut');

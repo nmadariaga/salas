@@ -28,7 +28,7 @@
   	<tbody>
 			{!! Form::open(['route' => 'cursos.store']) !!}
 			<div class="form-group">
-					{!! Form::text('asignatura_id', null,['class'=>'form-control', 'placeholder'=>'Nombre del curso'])!!}
+				{!! Form::select('asignatura_id', $asignatura) !!}
 				</div>
 				<div class="form-group">
 					{!! Form::text('semestre', null, ['class' => 'form-control', 'placeholder'=>'Semestre al que pertenece']) !!}

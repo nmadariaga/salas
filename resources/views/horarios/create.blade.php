@@ -34,7 +34,7 @@
 					{!! Form::text('sala_id', null,['class'=>'form-control', 'placeholder'=>'Sala'])!!}
 				</div>
 				<div class="form-group">
-					{!! Form::text('periodo_id', null,['class'=>'form-control', 'placeholder'=>'Periodo'])!!}
+				{!! Form::select('periodo_id', $periodo) !!}
 				</div>
 				<div class="form-group">
 					{!! Form::text('curso_id', null,['class'=>'form-control', 'placeholder'=>'Curso'])!!}

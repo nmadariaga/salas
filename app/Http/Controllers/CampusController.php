@@ -32,7 +32,7 @@ class CampusController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(ValidarFormulario $postForm)
+	public function store()
 	{
 		$campus = new \App\Campus;
 
@@ -45,7 +45,7 @@ class CampusController extends Controller {
 
 		$campus->save();
 
-		return redirect('campus/create')->with('message', 'Campus Agregado');
+		return redirect()->route('campus.index')->with('message', 'Campus Agregado');
 	}
 
 	/**

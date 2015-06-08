@@ -37,7 +37,7 @@
 					{!! Form::text('descripcion', null,['class'=>'form-control', 'placeholder'=>'Descripcion'])!!}
 				</div>
 				<div class="form-group">
-					{!! Form::text('departamento_id', null,['class'=>'form-control', 'placeholder'=>'Departamento'])!!}
+				{!! Form::select('departamento_id', $departamento) !!}
 				</div>
 				<div class="form-group">
 					{!! Form::submit('Send', ["class" => "btn btn-success btn-block"]) !!}
