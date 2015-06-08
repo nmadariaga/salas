@@ -22,10 +22,10 @@
 		<td><a href="/tiposdesalas/create" class="btn btn-warning btn-sm">Agregar Tipo de Sala</a></td>
 	</table>
 </p>
-<h4>Actualizar datos del Tipo de Sala "{{$tipodesala->nombre}}"</h4>
+<h4>Actualizar datos del Tipo de Sala "{{$tiposdesala->nombre}}"</h4>
   <table class="table table-striped table-hover ">
     <tbody>
-      {!! Form::model($tipodesala, ['route' => ['tipodesalas.update', $tipodesala->id], 'method' => 'patch']) !!}
+      {!! Form::model($tiposdesala, ['route' => ['tiposdesalas.update', $tiposdesala->id], 'method' => 'patch']) !!}
       <div class="form-group">
         {!! Form::text('nombre', null, ['class' => 'form-control', 'placeholder'=>'Nombre']) !!}
       </div>

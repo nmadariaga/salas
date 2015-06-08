@@ -33,10 +33,10 @@
     <tr>
       <td width=450>{{ $tiposdesala->nombre }}</td>
       <td>
-        {!! Html::link(route('tiposdesala.show', $tiposdesala->id), 'Detalles', array('class' => 'label label-info')) !!}
-        {!! Html::link(route('tiposdesala.edit', $tiposdesala->id), 'Editar', array('class' => 'label label-success')) !!}
+        {!! Html::link(route('tiposdesalas.show', $tiposdesala->id), 'Detalles', array('class' => 'label label-info')) !!}
+        {!! Html::link(route('tiposdesalas.edit', $tiposdesala->id), 'Editar', array('class' => 'label label-success')) !!}
         <td>
-          {!! Form::open(array('route' => array('tiposdesala.destroy', $tiposdesala->id), 'method' => 'DELETE')) !!}
+          {!! Form::open(array('route' => array('tiposdesalas.destroy', $tiposdesala->id), 'method' => 'DELETE')) !!}
             <button class="label label-danger">Eliminar</button>
           {!! Form::close() !!}
         </td>
