@@ -15,7 +15,10 @@
 </style>
 </head>
 <body>
+  {!!HTML::image('utem.png')!!}
+  <p>
   <h1>MENU ADMINISTRADOR</h1>
+  <p>
   @yield('contenido')
 </body>
 </html>

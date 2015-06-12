@@ -32,9 +32,9 @@
 			<div class="form-group">
 				{!! Form::text('nombre', null, ['class' => 'form-control', 'placeholder'=>'Nombre de la Facultad']) !!}
 			</div>
-			<div class="form-group">
-			{!! Form::select('campus_id', $campus) !!}
-			</div>
+      <div class="form-group"><p>Seleccione Campus:
+      {!! Form::select('campus_id', $campus) !!}<p>
+      </div>
 			<div class="form-group">
 				{!! Form::text('descripcion', null,['class'=>'form-control', 'placeholder'=>'Descripcion'])!!}
 			</div>

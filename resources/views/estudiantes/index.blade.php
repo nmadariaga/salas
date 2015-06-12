@@ -33,7 +33,7 @@
   <tbody>
     @foreach($estudiantes as $estudiante)
     <tr>
-      <td width=450>{{ $estudiante->nombre }}</td>
+      <td width=450>{{ $estudiante->nombres }}</td>
       <td>
         {!! Html::link(route('estudiantes.show', $estudiante->id), 'Detalles', array('class' => 'label label-info')) !!}
         {!! Html::link(route('estudiantes.edit', $estudiante->id), 'Editar', array('class' => 'label label-success')) !!}
