@@ -15,7 +15,7 @@ class PeriodosController extends Controller {
 					 */
 					public function index()
 					{
-						return view("periodos.index")->with('periodos', \App\Periodo::paginate(5)->setPath('periodo'));
+						return view("periodos.index")->with('periodos', \App\Periodo::paginate(10)->setPath('periodo'));
 					}
 
 					/**
@@ -40,7 +40,7 @@ class PeriodosController extends Controller {
 						$periodo->bloque = \Request::input('bloque');
 						$periodo->inicio = \Request::input('inicio');
 						$periodo->fin = \Request::input('fin');
-						
+
 						$periodo->save();
 
 						return redirect()->route('periodos.index')->with('message', 'Periodo agregado');

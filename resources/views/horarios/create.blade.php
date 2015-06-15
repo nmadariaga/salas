@@ -30,14 +30,14 @@
 				<div class="form-group">
 					{!! Form::text('fecha', null, ['class' => 'form-control', 'placeholder'=>'Fecha del Horario']) !!}
 				</div>
-				<div class="form-group">
-					{!! Form::text('sala_id', null,['class'=>'form-control', 'placeholder'=>'Sala'])!!}
+        <div class="form-group">
+				{!! Form::select('salas_id', $salas) !!}
 				</div>
 				<div class="form-group">
 				{!! Form::select('periodo_id', $periodo) !!}
 				</div>
-				<div class="form-group">
-					{!! Form::text('curso_id', null,['class'=>'form-control', 'placeholder'=>'Curso'])!!}
+        <div class="form-group">
+				{!! Form::select('curso_id', $curso) !!}
 				</div>
 				<div class="form-group">
 					{!! Form::submit('Send', ["class" => "btn btn-success btn-block"]) !!}

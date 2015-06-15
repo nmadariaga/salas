@@ -31,10 +31,10 @@
               <td width=100>
                 <h5><b>Campus:</b></h5>
               </td>
-              <td>{{$sala->campus_id}}</td>
+              <td>{{$campus->nombre}}</td>
             <tr>
               <td width=100><h5><b>Tipo de Sala:</b></h5></td>
-              <td>{{$sala->tipo_sala_id}}</td>
+              <td>{{$tiposala->nombre}}</td>
             </tr>
             <tr>
               <td width=100><h5><b>Nombre:</b></h5></td>

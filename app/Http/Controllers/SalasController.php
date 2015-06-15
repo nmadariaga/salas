@@ -37,7 +37,7 @@ class SalasController extends Controller {
 	 */
 	public function store()
 	{
-		$salas = new \App\Salas;
+		$salas = new \App\Sala;
 
 		$salas->campus_id = \Request::input('campus_id');
 		$salas->tipo_sala_id = \Request::input('tipo_sala_id');
@@ -60,7 +60,7 @@ class SalasController extends Controller {
 		$salas = \App\Sala::find($id);
 		$campus = Campus::find($salas->campus_id);
 		$tiposdesalas = Tipodesala::find($salas->tipo_sala_id);
-		return view('salas.show')->with('sala',$salas)->with('tiposdesala',$salas)->with('campus',$campus);
+		return view('salas.show')->with('sala',$salas)->with('tiposala',$tiposdesalas)->with('campus',$campus);
 	}
 
 	/**

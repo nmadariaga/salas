@@ -33,7 +33,7 @@
               <td width=100>
                 <h5><b>Departamento:</b></h5>
               </td>
-              <td>{{$funcionario->departamento_id}}</td>
+              <td>{{$departamento->nombre}}</td>
             <tr>
               <td width=100><h5><b>RUT:</b></h5></td>
               <td>{{$funcionario->rut}}</td>

@@ -23,7 +23,7 @@
           {!! Html::link(route('cursos.edit', $curso->id), 'Editar', array('class' => 'btn btn-warning btn-sm')) !!}</td>
   </table>
 </p>
-<h4>Información del curso "{{$curso->asignatura_id}}" </h4>
+<h4>Información del curso "{{$asignaturas->nombre}} ({{$curso->seccion }})" </h4>
   <table class="table table-striped table-hover ">
     <tbody>
           @if (!empty($curso))
@@ -31,14 +31,14 @@
               <td width=100>
                 <h5><b>Nombre:</b></h5>
               </td>
-              <td>{{$curso->asignatura_id}}</td>
+              <td>{{$asignaturas->nombre}}</td>
             <tr>
               <td width=250><h5><b>La seccion de este curso es la numero:</b></h5></td>
               <td>{{$curso->seccion }}</td>
             </tr>
             <tr>
               <td width=100><h5><b>El profesor asignado es:</b></h5></td>
-              <td>{{$curso->docente_id}}</td>
+              <td>{{$docente->nombres}}</td>
           </tr>
           @else
           <p>

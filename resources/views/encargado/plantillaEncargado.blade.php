@@ -15,6 +15,7 @@
 </style>
 </head>
 <body>
+  {!!HTML::image('utem.png')!!}
   <h1>MENU ENCARGADO</h1>
   @yield('contenido')
 </body>

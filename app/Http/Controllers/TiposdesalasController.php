@@ -35,10 +35,8 @@ class TiposdesalasController extends Controller {
 	public function store()
 	{
 		$tiposdesalas = new \App\Tipodesala;
-
 		$tiposdesalas->nombre = \Request::input('nombre');
 		$tiposdesalas->descripcion = \Request::input('descripcion');
-
 		$tiposdesalas->save();
 
 		return redirect('tiposdesalas/create')->with('message', 'Tipo de Sala Agregada');
@@ -53,7 +51,6 @@ class TiposdesalasController extends Controller {
 	public function show($id)
 	{
 		$tiposdesalas = \App\Tipodesala::find($id);
-
 		return view('tiposdesalas.show')->with('tiposdesala',$tiposdesalas);
 	}
 
@@ -77,10 +74,8 @@ class TiposdesalasController extends Controller {
 	public function update($id)
 	{
 		$tiposdesalas = \App\Tipodesala::find($id);
-
 		$tiposdesalas->nombre = \Request::input('nombre');
 		$tiposdesalas->descripcion = \Request::input('descripcion');
-
 		$tiposdesalas->save();
 		return redirect()->route('tiposdesalas.edit', ['tiposdesala' => $id])->with('message', 'Cambios guardados');
 	}
@@ -94,9 +89,7 @@ class TiposdesalasController extends Controller {
 	public function destroy($id)
 	{
 		$tiposdesalas = \App\Tipodesala::find($id);
-
 		$tiposdesalas->delete();
-
 		return redirect()->route('tiposdesalas.index')->with('message', 'Tipo de Sala Eliminada con éxito');
 	}
 

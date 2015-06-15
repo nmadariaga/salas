@@ -31,7 +31,7 @@
   <tbody>
     @foreach($periodos as $periodo)
     <tr>
-      <td width=450>{{ $periodo->bloque }}</td>
+      <td width=450>Periodo: {{ $periodo->bloque }}</td>
       <td>
         {!! Html::link(route('periodos.show', $periodo->id), 'Detalles', array('class' => 'label label-info')) !!}
         {!! Html::link(route('periodos.edit', $periodo->id), 'Editar', array('class' => 'label label-success')) !!}

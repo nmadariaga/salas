@@ -38,10 +38,10 @@
 				</div>
 				<div class="form-group">
 					{!! Form::text('seccion', null,['class'=>'form-control', 'placeholder'=>'Seccion'])!!}
-				</div
+				</div>
 
-				><div class="form-group">
-					{!! Form::text('docente_id', null,['class'=>'form-control', 'placeholder'=>'Docente asignado al curso'])!!}
+        <div class="form-group">
+				{!! Form::select('docente_id', $docente) !!}
 				</div>
 				<div class="form-group">
 					{!! Form::submit('Send', ["class" => "btn btn-success btn-block"]) !!}

@@ -30,7 +30,7 @@
   <tbody>
     @foreach($cursos as $curso)
     <tr>
-      <td width=450>{{ $curso->asignatura_id }}</td>
+      <td width=450>{{ $curso->nombres }}</td>
       <td>
         {!! Html::link(route('cursos.show', $curso->id), 'Detalles', array('class' => 'label label-info')) !!}
         {!! Html::link(route('cursos.edit', $curso->id), 'Editar', array('class' => 'label label-success')) !!}

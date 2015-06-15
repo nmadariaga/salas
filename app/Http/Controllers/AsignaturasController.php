@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ValidarFormulario;
 use Illuminate\Http\Request;
-
+use Departamento;
 class AsignaturasController extends Controller {
 
 	/**
@@ -56,8 +56,8 @@ class AsignaturasController extends Controller {
 	public function show($id)
 	{
 		$asignaturas = \App\Asignatura::find($id);
-        $departamento = \App\Departamento::find($asignatura->departamento_id);
-		return view('asignaturas.show')->with('asignatura',$asignaturas)->with('departamentos',$departamentos);
+    $departamento = \App\Departamento::find($asignaturas->departamento_id);
+		return view('asignaturas.show')->with('asignatura',$asignaturas)->with('departamentos',$departamento);
 	}
 
 	/**

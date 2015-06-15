@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Doncente;
 
 class CursosController extends Controller {
 
@@ -25,7 +26,8 @@ class CursosController extends Controller {
 		public function create()
 		{
 			$asignatura = \App\Asignatura::lists('nombre','id');
-		return view('cursos.create')->with('asignatura',$asignatura);
+			$docente = \App\Docente::lists('nombres','id');
+			return view('cursos.create')->with('asignatura',$asignatura)->with('docente',$docente);
 		}
 
 		/**
@@ -34,7 +36,7 @@ class CursosController extends Controller {
 		 * @return Response
 		 */
 		public function store()
-		{ 
+		{
 			$curso = new \App\Curso;
 
 			$curso->semestre = \Request::input('semestre');
@@ -57,8 +59,9 @@ class CursosController extends Controller {
 		public function show($id)
 		{
 			$curso = \App\Curso::find($id);
-            $asignaturas = \App\Asignatura::find($curso->asignatura_id);
-			return view('cursos.show')->with('curso',$curso)->with('asignaturas',$asignaturas);
+      $asignaturas = \App\Asignatura::find($curso->asignatura_id);
+			$docente = \App\Docente::find($curso->docente_id);
+			return view('cursos.show')->with('curso',$curso)->with('asignaturas',$asignaturas)->with('docente',$docente);
 		}
 
 		/**
@@ -70,7 +73,8 @@ class CursosController extends Controller {
 		public function edit($id)
 		{
 			$asignaturas = \App\Asignatura::lists('nombre','id');
-			return view('cursos.edit')->with('curso', \App\Curso::find($id))->with('asignaturas',$asignaturas);
+			$docente = \App\Docente::lists('nombres','id');
+			return view('cursos.edit')->with('curso', \App\Curso::find($id))->with('asignaturas',$asignaturas)->with('docente',$docente);
 		}
 
 		/**

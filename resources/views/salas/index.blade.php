@@ -26,7 +26,7 @@
     </td>
   </table>
 </p>
-<h4>Listado de Funcionarios</h4>
+<h4>Listado de Salas</h4>
 <table class="table table-striped table-hover ">
   <tbody>
     @foreach($salas as $sala)

@@ -33,7 +33,7 @@
               <td width=100>
                 <h5><b>Carrera:</b></h5>
               </td>
-              <td>{{$estudiante->carrera_id}}</td>
+              <td>{{$carrera->nombre}}</td>
             <tr>
               <td width=100><h5><b>RUT:</b></h5></td>
               <td>{{$estudiante->rut}}</td>
