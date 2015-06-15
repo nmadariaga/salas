@@ -39,7 +39,7 @@ class TiposdesalasController extends Controller {
 		$tiposdesalas->descripcion = \Request::input('descripcion');
 		$tiposdesalas->save();
 
-		return redirect('tiposdesalas/create')->with('message', 'Tipo de Sala Agregada');
+		return redirect()->route('tiposdesalas.index')->with('message', 'Tipo de Sala Agregada');
 	}
 
 	/**

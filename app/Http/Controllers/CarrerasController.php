@@ -44,7 +44,7 @@ class CarrerasController extends Controller {
 
 						$carrera->save();
 
-						return redirect('carreras/create')->with('message', 'Carrera Agregada');
+						return redirect()->route('carreras.index')->with('message', 'Carrera Agregada');
 					}
 
 					/**

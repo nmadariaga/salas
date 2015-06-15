@@ -45,7 +45,7 @@ class EstudiantesController extends Controller {
 
 		$estudiante->save();
 
-		return redirect('estudiantes/create')->with('message', 'Estudiante Agregado');
+		return redirect()->route('estudiantes.index')->with('message', 'Estudiante Agregado');
 	}
 
 	/**

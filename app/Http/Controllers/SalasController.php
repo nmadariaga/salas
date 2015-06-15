@@ -46,7 +46,7 @@ class SalasController extends Controller {
 
 		$salas->save();
 
-		return redirect('salas/create')->with('message', 'Sala Agregada');
+		return redirect()->route('salas.index')->with('message', 'Sala Agregada');
 	}
 
 	/**

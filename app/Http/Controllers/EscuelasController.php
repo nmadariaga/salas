@@ -43,7 +43,7 @@ class EscuelasController extends Controller {
 
 					$escuela->save();
 
-					return redirect('escuelas/create')->with('message', 'Escuela Agregada');
+					return redirect()->route('escuelas.index')->with('message', 'Escuela Agregada');
 				}
 
 				/**

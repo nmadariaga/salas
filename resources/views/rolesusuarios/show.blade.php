@@ -1,4 +1,4 @@
-@extends('administrador.plantillaAdmin')')
+@extends('administrador.plantillaAdmin')
 @section('contenido')
 <p>
 	<ul class="nav nav-tabs">
@@ -11,8 +11,8 @@
   <li class=""><a aria-expanded="false" href="/funcionarios" data-toggle="tab">Funcionarios</a></li>
   <li class=""><a aria-expanded="false" href="/docentes" data-toggle="tab">Docentes</a></li>
   <li class=""><a aria-expanded="false" href="/estudiantes" data-toggle="tab">Estudiantes</a></li>
-  <li class="active"><a aria-expanded="false" href="/roles" data-toggle="tab">Roles</a></li>
-  <li class=""><a aria-expanded="false" href="/rolesusuarios" data-toggle="tab">Roles de usuarios</a></li>
+  <li class=""><a aria-expanded="false" href="/roles" data-toggle="tab">Roles</a></li>
+  <li class="active"><a aria-expanded="false" href="/rolesusuarios" data-toggle="tab">Roles de usuarios</a></li>
     <li class="dropdown">
       <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#">Opciones <span class="caret"></span></a>
       <ul class="dropdown-menu">
@@ -23,28 +23,30 @@
     </li>
   </ul>
 	<table>
-		<td width=505><h2>Registro de roles</h2></td>
-		<td><a href="/roles" class="btn btn-default btn-sm">Volver</a>
-		<a href="/roles/create" class="btn btn-warning btn-sm">Agregar rol</a></td>
-</table>
+	   <td width=505><h2>Registro de asignaciones</h2></td>
+	    <td><a href="/rolesusuarios" class="btn btn-default btn-sm">Volver</a>
+          {!! Html::link(route('rolesusuarios.edit', $rolesusuario->id), 'Editar', array('class' => 'btn btn-warning btn-sm')) !!}</td>
+  </table>
 </p>
-  <h4>Actualizar Rol "{{$role->nombre}}"</h4>
-	<table class="table table-striped table-hover ">
-  	<tbody>
-    	{!! Form::model($role, ['route' => ['roles.update', $role->id], 'method' => 'patch']) !!}
-			<div class="form-group">
-				{!! Form::text('nombre', null, ['class' => 'form-control', 'placeholder'=>'Rol']) !!}
-			</div>
-			<div class="form-group">
-				{!! Form::text('descripcion', null,['class'=>'form-control', 'placeholder'=>'Descripcion'])!!}
-			</div>
-			<div class="form-group">
-				{!! Form::submit('Send', ["class" => "btn btn-success btn-block"]) !!}
-			</div>
-			{!! Form::close() !!}
-     	<p>
-	    	@if(Session::has('message'))
-        	<div class="btn btn-success disabled{{ Session::get('class') }}">{{ Session::get('message')}}</div>
-        @endif
-      </p>
+<h4>Información de {{$rolesusuario->rut}} </h4>
+  <table class="table table-striped table-hover ">
+    <tbody>
+          @if (!empty($rolesusuario))
+            <tr height= 10>
+              <td width=100>
+                <h5><b>Identificacion:</b></h5>
+              </td>
+              <td>{{$rolesusuario->rut}}</td>
+            <tr>
+              <td width=250><h5><b>Rol:</b></h5></td>
+              <td>{{$rolesusuario->rol_id }}</td>
+            </tr>
+            
+          @else
+          <p>
+            No existe información de este rol.
+          </p>
+          @endif
+      </tbody>
+  </table>
 @stop

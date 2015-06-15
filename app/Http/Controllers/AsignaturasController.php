@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ValidarFormulario;
 use Illuminate\Http\Request;
-use Departamento;
+use App\Departamento;
 class AsignaturasController extends Controller {
 
 	/**

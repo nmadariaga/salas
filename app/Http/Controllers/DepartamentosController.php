@@ -43,7 +43,7 @@ class DepartamentosController extends Controller {
 
 				$departamento->save();
 
-				return redirect('departamentos/create')->with('message', 'Departamento Agregado');
+				return redirect()->route('departamentos.index')->with('message', 'Departamento Agregado');
 			}
 
 			/**

@@ -44,7 +44,7 @@ class FacultadesController extends Controller {
 
 			$facultad->save();
 
-			return redirect('facultades/create')->with('message', 'Facultad Agregada');
+			return redirect()->route('facultades.index')->with('message', 'Facultad Agregada');
 		}
 
 		/**

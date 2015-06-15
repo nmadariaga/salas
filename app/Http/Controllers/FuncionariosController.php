@@ -45,7 +45,7 @@ class FuncionariosController extends Controller {
 
 		$funcionarios->save();
 
-		return redirect('funcionarios/create')->with('message', 'Funcionario Agregado');
+		return redirect()->route('funcionarios.index')->with('message', 'Funcionario Agregado');
 	}
 
 	/**

@@ -45,7 +45,7 @@ class DocentesController extends Controller {
 
 		$docentes->save();
 
-		return redirect('docentes/create')->with('message', 'Docente Agregado');
+		return redirect()->route('docentes.index')->with('message', 'Docente Agregado');
 	}
 
 	/**
