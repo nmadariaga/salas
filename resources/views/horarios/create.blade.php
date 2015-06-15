@@ -30,13 +30,13 @@
 				<div class="form-group">
 					{!! Form::text('fecha', null, ['class' => 'form-control', 'placeholder'=>'Fecha del Horario']) !!}
 				</div>
-        <div class="form-group">
+        <div class="form-group">Sala:
 				{!! Form::select('salas_id', $salas) !!}
 				</div>
-				<div class="form-group">
+				<div class="form-group">Periodo:
 				{!! Form::select('periodo_id', $periodo) !!}
 				</div>
-        <div class="form-group">
+        <div class="form-group">Curso:
 				{!! Form::select('curso_id', $curso) !!}
 				</div>
 				<div class="form-group">

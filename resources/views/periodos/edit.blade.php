@@ -27,13 +27,13 @@
 	<table class="table table-striped table-hover ">
   	<tbody>
     	{!! Form::model($periodo, ['route' => ['periodos.update', $periodo->id], 'method' => 'patch']) !!}
-			<div class="form-group">
+			<div class="form-group">Bloque:
 				{!! Form::text('bloque', null, ['class' => 'form-control', 'placeholder'=>'Bloque']) !!}
 			</div>
-			<div class="form-group">
+			<div class="form-group">Inicio:
 				{!! Form::text('inicio', null,['class'=>'form-control', 'placeholder'=>'Hora de inicio'])!!}
 			</div>
-			<div class="form-group">
+			<div class="form-group">Final:
 				{!! Form::text('fin', null,['class'=>'form-control', 'placeholder'=>'Hora de fin'])!!}
 			</div>
 			<div class="form-group">

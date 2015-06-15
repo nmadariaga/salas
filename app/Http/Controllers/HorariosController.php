@@ -25,7 +25,9 @@ class HorariosController extends Controller {
 			public function create()
 			{
 				$periodo = \App\Periodo::lists('bloque','id');
-		return view('horarios.create')->with('periodo',$periodo);
+				$sala = \App\Sala::lists('nombre','id');
+				$curso = \App\Curso::lists('asignatura_id','id');
+				return view('horarios.create')->with('periodo',$periodo)->with('salas',$sala)->with('curso',$curso);
 			}
 
 			/**
@@ -38,7 +40,7 @@ class HorariosController extends Controller {
 				$horario = new \App\Horario;
 
 				$horario->fecha = \Request::input('fecha');
-				$horario->sala_id = \Request::input('sala_id');
+				$horario->sala_id = \Request::input('salas_id');
 				$horario->periodo_id = \Request::input('periodo_id');
 				$horario->curso_id = \Request::input('curso_id');
 
@@ -57,8 +59,10 @@ class HorariosController extends Controller {
 			public function show($id)
 			{
 				$horario = \App\Horario::find($id);
-                $periodo = \App\Periodo::find($horario->periodo_id);
-				return view('horarios.show')->with('horario',$horario)->with('periodos',$periodos);
+        $periodo = \App\Periodo::find($horario->periodo_id);
+				$sala = \App\Sala::find($horario->sala_id);
+				$curso = \App\Curso::find($horario->sala_id);
+				return view('horarios.show')->with('horario',$horario)->with('periodo',$periodo)->with('sala',$sala)->with('curso',$curso);
 			}
 
 			/**

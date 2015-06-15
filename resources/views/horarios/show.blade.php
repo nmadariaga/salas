@@ -38,11 +38,11 @@
             </tr>
             <tr>
               <td width=100><h5><b>Sala:</b></h5></td>
-              <td>{{$horario->sala_id}}</td>
+              <td>{{$sala->nombre}}</td>
           </tr>
           <tr>
               <td width=250><h5><b>Periodo:</b></h5></td>
-              <td>{{$horario->periodo_id }}</td>
+              <td>{{$periodo->bloque }}&nbsp&nbsp&nbsp&nbsp{{$periodo->inicio }}&nbsp:&nbsp{{$periodo->fin }} </td>
             </tr>
           @else
           <p>

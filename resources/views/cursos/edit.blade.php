@@ -27,19 +27,19 @@
 	<table class="table table-striped table-hover ">
   	<tbody>
     	{!! Form::model($curso, ['route' => ['cursos.update', $curso->id], 'method' => 'patch']) !!}
-			<div class="form-group">
+			<div class="form-group">Semestre:
 				{!! Form::text('semestre', null, ['class' => 'form-control', 'placeholder'=>'Semestre al que pertenece']) !!}
 			</div>
-			<div class="form-group">
+			<div class="form-group">Año:
 				{!! Form::text('anio', null,['class'=>'form-control', 'placeholder'=>'Año academico'])!!}
 			</div>
-			<div class="form-group">
+			<div class="form-group">Seccion:
 				{!! Form::text('seccion', null,['class'=>'form-control', 'placeholder'=>'Seccion'])!!}
 			</div>
-			<div class="form-group">
+			<div class="form-group">Asignatura:
 			{!! Form::select('asignatura_id', $asignaturas) !!}
 			</div>
-      <div class="form-group">
+      <div class="form-group">Docente:
       {!! Form::select('docente_id', $docente) !!}
       </div>
 			<div class="form-group">

@@ -27,16 +27,16 @@
 	<table class="table table-striped table-hover ">
   	<tbody>
     	{!! Form::model($horario, ['route' => ['horarios.update', $horario->id], 'method' => 'patch']) !!}
-			<div class="form-group">
+			<div class="form-group">Fecha:
 				{!! Form::text('fecha', null, ['class' => 'form-control', 'placeholder'=>'Fecha del horario']) !!}
 			</div>
-			<div class="form-group">
+			<div class="form-group">Sala:
 				{!! Form::text('sala_id', null,['class'=>'form-control', 'placeholder'=>'Sala'])!!}
 			</div>
-			<div class="form-group">
+			<div class="form-group">Periodo:
 			{!! Form::select('periodo_id', $periodos) !!}
 			</div>
-			<div class="form-group">
+			<div class="form-group">Curso:
 				{!! Form::text('curso_id', null,['class'=>'form-control', 'placeholder'=>'Curso'])!!}
 			</div>
 			<div class="form-group">

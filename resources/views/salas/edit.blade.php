@@ -27,16 +27,16 @@
   <table class="table table-striped table-hover ">
     <tbody>
       {!! Form::model($sala, ['route' => ['salas.update', $sala->id], 'method' => 'patch']) !!}
-        <div class="form-group">
-          {!! Form::text('campus_id', null, ['class' => 'form-control', 'placeholder'=>'Campus']) !!}
-        </div>
-        <div class="form-group">
-          {!! Form::text('tipo_sala_id', null,['class'=>'form-control', 'placeholder'=>'Tipo de Sala'])!!}
-        </div>
-        <div class="form-group">
+      <div class="form-group">Campus:
+      {!! Form::select('campus_id', $campus) !!}
+      </div>
+      <div class="form-group">Tipo de sala:
+      {!! Form::select('tipo_sala_id', $tiposdesala) !!}
+      </div>
+        <div class="form-group">Nombre:
           {!! Form::text('nombre', null,['class'=>'form-control', 'placeholder'=>'Nombre'])!!}
         </div>
-        <div class="form-group">
+        <div class="form-group">Descripcion:
           {!! Form::text('descripcion', null,['class'=>'form-control', 'placeholder'=>'Descripción'])!!}
         </div>
       <div class="form-group">
