@@ -9,7 +9,9 @@
   <li class="active"><a aria-expanded="false" href="/carreras" data-toggle="tab">Carreras</a></li>
   <li class=""><a aria-expanded="false" href="/funcionarios" data-toggle="tab">Funcionarios</a></li>
   <li class=""><a aria-expanded="false" href="/docentes" data-toggle="tab">Docentes</a></li>
-  <li class=""><a aria-expanded="false" href="/estudiantes" data-toggle="tab">Estudiantes</a></li>		<li class="dropdown">
+  <li class=""><a aria-expanded="false" href="/estudiantes" data-toggle="tab">Estudiantes</a></li>
+  <li class=""><a aria-expanded="false" href="/roles" data-toggle="tab">Roles</a></li>
+  		<li class="dropdown">
 			<a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#">Opciones <span class="caret"></span></a>
 			<ul class="dropdown-menu">
 				<li><a href="#dropdown1" data-toggle="tab">Action</a></li>
