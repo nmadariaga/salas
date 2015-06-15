@@ -52,6 +52,7 @@ Route::resource('horarios','HorariosController');
 
 Route::resource('roles','RolesController');
 
+Route::get('login','LoginController@index');
 
 Route::get('/admin/menu','MenuController@menuAdministrador');
 Route::get('/encargado/menu','MenuController@menuEncargado');
