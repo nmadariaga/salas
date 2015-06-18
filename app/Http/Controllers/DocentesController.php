@@ -89,7 +89,7 @@ class DocentesController extends Controller {
 		$docentes->apellidos = \Request::input('apellidos');
 
 		$docentes->save();
-		return redirect()->route('docentes.edit', ['docente' => $id])->with('message', 'Cambios guardados');
+		return redirect()->route('docentes.index', ['docente' => $id])->with('message', 'Cambios guardados');
 	}
 
 	/**

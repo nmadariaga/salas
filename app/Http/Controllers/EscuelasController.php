@@ -86,7 +86,7 @@ class EscuelasController extends Controller {
 					$escuela->descripcion = \Request::input('descripcion');
 
 					$escuela->save();
-					return redirect()->route('escuelas.edit', ['escuela' => $id])->with('message', 'Cambios guardados');
+					return redirect()->route('escuelas.index', ['escuela' => $id])->with('message', 'Cambios guardados');
 				}
 
 				/**

@@ -82,7 +82,7 @@ class RolesusuariosController extends Controller {
 		$rolesusuarios->rol_id = \Request::input('rol_id');
 
 		$rolesusuarios->save();
-		return redirect()->route('rolesusuarios.index')->with('message', 'Cambios guardados');
+		return redirect()->route('rolesusuarios.index', ['rol' => $id])->with('message', 'Cambios guardados');
 	}
 
 	/**

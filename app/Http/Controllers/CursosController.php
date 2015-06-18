@@ -94,7 +94,7 @@ class CursosController extends Controller {
 			$curso->docente_id = \Request::input('docente_id');
 
 			$curso->save();
-			return redirect()->route('cursos.edit', ['curso' => $id])->with('message', 'Cambios guardados');
+			return redirect()->route('cursos.index', ['curso' => $id])->with('message', 'Cambios guardados');
 		}
 
 		/**

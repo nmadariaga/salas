@@ -87,7 +87,7 @@ class FacultadesController extends Controller {
 			$facultad->descripcion = \Request::input('descripcion');
 
 			$facultad->save();
-			return redirect()->route('facultades.edit', ['facultad' => $id])->with('message', 'Cambios guardados');
+			return redirect()->route('facultades.index', ['facultad' => $id])->with('message', 'Cambios guardados');
 		}
 
 		/**

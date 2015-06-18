@@ -90,7 +90,7 @@ class CampusController extends Controller {
 		$campus->rut_encargado = \Request::input('rut_encargado');
 
 		$campus->save();
-		return redirect()->route('campus.edit', ['campu' => $id])->with('message', 'Cambios guardados');
+		return redirect()->route('campus.index', ['campu' => $id])->with('message', 'Cambios guardados');
 	}
 
 	/**

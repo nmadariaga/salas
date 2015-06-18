@@ -89,7 +89,7 @@ class FuncionariosController extends Controller {
 		$funcionarios->apellidos = \Request::input('apellidos');
 
 		$funcionarios->save();
-		return redirect()->route('funcionarios.edit', ['funcionario' => $id])->with('message', 'Cambios guardados');
+		return redirect()->route('funcionarios.index', ['funcionario' => $id])->with('message', 'Cambios guardados');
 	}
 
 	/**

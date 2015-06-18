@@ -82,7 +82,7 @@ class RolesController extends Controller {
 		$roles->descripcion = \Request::input('descripcion');
 
 		$roles->save();
-		return redirect()->route('roles.index')->with('message', 'Cambios guardados');
+		return redirect()->route('roles.index', ['role' => $id])->with('message', 'Cambios guardados');
 	}
 
 	/**

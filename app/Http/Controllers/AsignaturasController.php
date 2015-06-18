@@ -88,7 +88,7 @@ class AsignaturasController extends Controller {
 		$asignaturas->departamento_id = \Request::input('departamento_id');
 
 		$asignaturas->save();
-		return redirect()->route('asignaturas.index')->with('message', 'Cambios guardados');
+		return redirect()->route('asignaturas.index', ['asignatura' => $id])->with('message', 'Cambios guardados');
 	}
 
 	/**

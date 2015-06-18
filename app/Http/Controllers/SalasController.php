@@ -92,7 +92,7 @@ class SalasController extends Controller {
 		$salas->descripcion = \Request::input('descripcion');
 
 		$salas->save();
-		return redirect()->route('salas.edit', ['sala' => $id])->with('message', 'Cambios guardados');
+		return redirect()->route('salas.index', ['sala' => $id])->with('message', 'Cambios guardados');
 	}
 
 	/**

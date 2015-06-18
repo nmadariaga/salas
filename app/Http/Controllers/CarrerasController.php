@@ -88,7 +88,7 @@ class CarrerasController extends Controller {
 						$carrera->descripcion = \Request::input('descripcion');
 
 						$carrera->save();
-						return redirect()->route('carreras.edit', ['carrera' => $id])->with('message', 'Cambios guardados');
+						return redirect()->route('carreras.index', ['carrera' => $id])->with('message', 'Cambios guardados');
 					}
 
 					/**

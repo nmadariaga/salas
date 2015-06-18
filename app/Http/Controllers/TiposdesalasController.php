@@ -77,7 +77,7 @@ class TiposdesalasController extends Controller {
 		$tiposdesalas->nombre = \Request::input('nombre');
 		$tiposdesalas->descripcion = \Request::input('descripcion');
 		$tiposdesalas->save();
-		return redirect()->route('tiposdesalas.edit', ['tiposdesala' => $id])->with('message', 'Cambios guardados');
+		return redirect()->route('tiposdesalas.index', ['tiposdesala' => $id])->with('message', 'Cambios guardados');
 	}
 
 	/**

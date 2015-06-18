@@ -90,7 +90,7 @@ class DepartamentosController extends Controller {
 				$departamento->descripcion = \Request::input('descripcion');
 
 				$departamento->save();
-				return redirect()->route('departamentos.edit', ['departamento' => $id])->with('message', 'Cambios guardados');
+				return redirect()->route('departamentos.index', ['departamento' => $id])->with('message', 'Cambios guardados');
 			}
 
 			/**

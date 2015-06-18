@@ -59,7 +59,7 @@ class HorariosController extends Controller {
 			public function show($id)
 			{
 				$horario = \App\Horario::find($id);
-        $periodo = \App\Periodo::find($horario->periodo_id);
+                $periodo = \App\Periodo::find($horario->periodo_id);
 				$sala = \App\Sala::find($horario->sala_id);
 				$curso = \App\Curso::find($horario->sala_id);
 				return view('horarios.show')->with('horario',$horario)->with('periodo',$periodo)->with('sala',$sala)->with('curso',$curso);
@@ -93,7 +93,7 @@ class HorariosController extends Controller {
 				$horario->curso_id = \Request::input('curso_id');
 
 				$horario->save();
-				return redirect()->route('horarios.edit', ['horario' => $id])->with('message', 'Cambios guardados');
+				return redirect()->route('horarios.index', ['horario' => $id])->with('message', 'Cambios guardados');
 			}
 
 			/**

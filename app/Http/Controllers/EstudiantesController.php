@@ -90,7 +90,7 @@ class EstudiantesController extends Controller {
 		$estudiante->email = \Request::input('email');
 
 		$estudiante->save();
-		return redirect()->route('estudiantes.edit', ['carrera' => $id])->with('message', 'Cambios guardados');
+		return redirect()->route('estudiantes.index', ['estudiante' => $id])->with('message', 'Cambios guardados');
 	}
 
 	/**
