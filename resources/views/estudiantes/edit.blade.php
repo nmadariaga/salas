@@ -27,12 +27,12 @@
 		<td><a href="/estudiantes/create" class="btn btn-warning btn-sm">Agregar Estudiante</a></td>
 	</table>
 </p>
-<h4>Actualizar datos del Estudiantes "{{$estudiante->nombre}}"</h4>
+<h4>Actualizar datos del Estudiantes "{{$estudiante->nombres}}"</h4>
   <table class="table table-striped table-hover ">
     <tbody>
       {!! Form::model($estudiante, ['route' => ['estudiantes.update', $estudiante->id], 'method' => 'patch']) !!}
         <div class="form-group">
-          {!! Form::text('carrera_id', null, ['class' => 'form-control', 'placeholder'=>'Carrera']) !!}
+          {!! Form::select('carrera_id', $carrera) !!}
         </div>
         <div class="form-group">
           {!! Form::text('rut', null,['class'=>'form-control', 'placeholder'=>'RUT'])!!}

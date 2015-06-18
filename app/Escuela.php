@@ -7,4 +7,13 @@ class Escuela extends Model {
 	protected $fillable = ['nombre','departamento_id','descripcion'];
 	protected $guarded = ['id'];
 
+public function carreras()
+    {
+        return $this->hasMany('App\Carrera');
+    }
+
+public function departamentos()
+    {
+        return $this->hasMany('App\Departamento');
+    }
 }

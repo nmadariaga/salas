@@ -8,4 +8,10 @@ class Estudiante extends Model {
 	protected $fillable = ['carrera_id','rut','nombres','apellidos','email'];
 	protected $guarded = ['id'];
 
+
+    public function carrera()
+    {
+        return $this->belongsTo('App\Carrera');
+    }
+
 }

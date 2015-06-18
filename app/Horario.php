@@ -9,4 +9,20 @@ class Horario extends Model {
 	protected $guarded = ['id'];
 
 
+    public function salas()
+    {
+        return $this->hasMany('App\Sala');
+    }
+
+    public function periodos()
+    {
+        return $this->hasMany('App\Periodo');
+    }
+
+    public function cursos()
+    {
+        return $this->hasMany('App\Curso');
+    }
+
+
 }

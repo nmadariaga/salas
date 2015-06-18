@@ -52,12 +52,10 @@ Route::resource('horarios','HorariosController');
 
 Route::resource('roles','RolesController');
 
-<<<<<<< HEAD
+
 Route::resource('rolesusuarios','RolesusuariosController');
 
-=======
-Route::get('login','LoginController@index');
->>>>>>> 7339e88ca42d06930eec1bac3aeab4d6245066a4
+
 
 Route::get('/admin/menu','MenuController@menuAdministrador');
 Route::get('/encargado/menu','MenuController@menuEncargado');

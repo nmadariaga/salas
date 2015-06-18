@@ -24,7 +24,8 @@ class RolesusuariosController extends Controller {
 	 */
 	public function create()
 	{
-		return view('rolesusuarios.create');
+		$rol = \App\Role::lists('nombre','id');
+		return view('rolesusuarios.create')->with('rol',$rol);
 	}
 	/**
 	 * Store a newly created resource in storage.

@@ -8,4 +8,11 @@ class Role extends Model {
 	protected $fillable = ['nombre', 'descripcion'];
 	protected $guarded = ['id'];
 
+
+public function rolusuario()
+    {
+        return $this->belongsTo('App\Rolusuario');
+    }
+
+
 }

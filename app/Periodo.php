@@ -9,4 +9,11 @@ class Periodo extends Model {
 	protected $guarded = ['id'];
 
 
+
+public function horario()
+    {
+        return $this->belongsTo('App\Horario');
+    }
+
+
 }

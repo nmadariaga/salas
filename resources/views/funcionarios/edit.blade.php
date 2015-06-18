@@ -27,12 +27,12 @@
 		<td><a href="/funcionarios/create" class="btn btn-warning btn-sm">Agregar Funcionario</a></td>
 	</table>
 </p>
-<h4>Actualizar datos del Funcionario "{{$funcionario->nombre}}"</h4>
+<h4>Actualizar datos del Funcionario "{{$funcionario->nombres}}"</h4>
   <table class="table table-striped table-hover ">
     <tbody>
       {!! Form::model($funcionario, ['route' => ['funcionarios.update', $funcionario->id], 'method' => 'patch']) !!}
       <div class="form-group">
-        {!! Form::text('departamento_id', null, ['class' => 'form-control', 'placeholder'=>'Departamento']) !!}
+        {!! Form::select('departamento_id', $departamento) !!}
       </div>
       <div class="form-group">
         {!! Form::text('rut', null,['class'=>'form-control', 'placeholder'=>'RUT'])!!}

@@ -8,4 +8,10 @@ class Tipodesala extends Model {
 	protected $fillable = ['nombre','descripcion'];
 	protected $guarded = ['id'];
 
+
+public function sala()
+    {
+        return $this->belongsTo('App\Sala');
+    }
+
 }

@@ -8,9 +8,14 @@ class Asignatura extends Model {
 	protected $fillable = ['codigo', 'nombre', 'descripcion', 'departamento_id'];
 	protected $guarded = ['id'];
 
-	public function departamentos()
+	public function departamento()
     {
-        return $this->belongsTo('Departamentos');
+        return $this->belongsTo('App\Departamento');
+    }
+
+    public function cursos()
+    {
+        return $this->hasMany('App\Curso');
     }
 
 }

@@ -8,4 +8,11 @@ class Rolusuario extends Model {
 	protected $fillable = ['rut', 'rol_id'];
 	protected $guarded = ['id'];
 
+
+public function rol()
+    {
+        return $this->hasOne('App\Role');
+    }
+
+
 }
